@@ -1,0 +1,37 @@
+{
+  "name": "gaia-profile-builder",
+  "version": "0.0.1",
+  "author": "Gareth Aye <gaye@mozilla.com>",
+  "description": "Gaia profile builder for marionette-js-runner",
+
+  "dependencies" : {
+    "debug": "*",
+    "mozilla-profile-builder": "0.2.0-alpha"
+  },
+
+  "devDependencies": {
+    "mocha": "~1.12",
+    "sinon": "~1.7"
+  },
+
+  "engine": {
+    "node": ">=0.8"
+  },
+
+  "keywords": [
+    "marionette",
+    "marionette-js-runner",
+    "mocha",
+    "mozilla profile",
+    "test",
+    "integration"
+  ],
+
+  "license": "MIT",
+
+  "main": "index.js",
+
+  "scripts": {
+    "test": "make test"
+  }
+}
