@@ -3,6 +3,9 @@ gaia-profile-builder
 
 Gaia profile builder for the marionette-js-runner project.
 
+[![Build
+Status](https://travis-ci.org/mozilla-b2g/gaia-profile-builder.png?branch=master)](https://travis-ci.org/mozilla-b2g/gaia-profile-builder)
+
 ## LICENSE
 
 Copyright (c) 2013 Mozilla Foundation
