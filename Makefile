@@ -12,4 +12,4 @@ lint:
 
 .PHONY: test
 test: node_modules
-	./node_modules/.bin/mocha test/index
+	./node_modules/.bin/mocha test/index_test.js

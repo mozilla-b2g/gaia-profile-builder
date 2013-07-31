@@ -1,4 +1,4 @@
-var exec = require('child_process').exec,
+var ChildProcess = require('child_process'),
     fs = require('fs'),
     mozProfileBuilder = require('mozilla-profile-builder');
 
@@ -72,12 +72,12 @@ ProfileBuilder.prototype = {
 
     // Create gaia base profile.
     var gaia = options.gaia;
-    var exists = fs.exists(gaia);
+    var exists = fs.existsSync(gaia);
     if (!exists) {
       throw 'Invalid gaia path provided';
     }
 
-    exec('make -C ' + gaia, function(err, stdout, stderr) {
+    ChildProcess.exec('make -C ' + gaia, function(err, stdout, stderr) {
       if (err) {
         throw err;
       }
@@ -93,7 +93,7 @@ ProfileBuilder.prototype = {
         this.profile = profile;
         callback(null, profile.path);
       }.bind(this));
-    });
+    }.bind(this));
   },
 
 
