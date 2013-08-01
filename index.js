@@ -2,7 +2,6 @@ var ChildProcess = require('child_process'),
     fs = require('fs'),
     mozProfileBuilder = require('mozilla-profile-builder');
 
-
 /**
  * Merge two objects and their properties (when objects) with no side effects!
  *
@@ -52,7 +51,6 @@ function ProfileBuilder(options) {
   }
 }
 
-
 ProfileBuilder.prototype = {
   /**
    * Profile instance class.
@@ -77,12 +75,13 @@ ProfileBuilder.prototype = {
       throw 'Invalid gaia path provided';
     }
 
-    ChildProcess.exec('make -C ' + gaia, function(err, stdout, stderr) {
+    var cmd = 'make -C ' + gaia;
+    ChildProcess.exec(cmd, { env: {} }, function(err, stdout, stderr) {
       if (err) {
         throw err;
       }
 
-      options.profile = ['baseProfile', gaia];
+      options.profile = ['baseProfile', gaia + '/profile'];
 
       mozProfileBuilder.create(options, function(err, profile) {
         if (err) {

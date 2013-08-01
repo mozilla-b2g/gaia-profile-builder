@@ -20,7 +20,7 @@ suite('ProfileBuilder', function() {
     setup(function() {
       // Mock ChildProcess#exec.
       exec = sinon.stub(ChildProcess, 'exec');
-      exec.callsArgWith(1, null);
+      exec.callsArgWith(2, null);
 
       // Mock mozProfileBuilder#create.
       create = sinon.stub(mozProfileBuilder, 'create');
@@ -56,7 +56,7 @@ suite('ProfileBuilder', function() {
           bird: 'Harvey',
           dog: 'Linus',
           gaia: __dirname,
-          profile: ['baseProfile', __dirname]
+          profile: ['baseProfile', __dirname + '/profile']
         });
 
         done();
